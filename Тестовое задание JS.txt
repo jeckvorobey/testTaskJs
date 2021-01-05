@@ -1,0 +1,44 @@
+﻿1. Напишите рекурсивную функцию вычисления n факториала.
+2. Чем различаются записи:
+   1. var arrayData = {};
+   2. var arrayData = [];
+3. Напишите аналог кода на чистом js
+        $(function(){
+        $(".popup_open").on("click", function(){
+                var data = "url="+$("#url").val();
+                var $form = $("#url").parents("from");
+                $.ajax({
+                        url: $form.attr('action'),
+                        data: data,
+                        dataType: "JSON",
+                        success: function(data){
+                                $(".popup_open").addClass("open");
+                                $(".popup_inner").addClass("open");
+                                $(".popup_inner").text(data.text);
+                                $(".popup_inner").before("<h1>"+data.title+"</h1>");
+                        }
+                });
+        });
+});
+4. Имеются следующие URL
+* https://itrack.ru/portfolio/website/
+* https://itrack.ru/portfolio/vnedrenie-crm/
+* https://itrack.ru/portfolio/website/filter/project_type-is-korporativnyy_sayt/apply/
+* https://itrack.ru/portfolio/vnedrenie-crm/filter/crm_project_type-is-amocrm/apply/
+* https://itrack.ru/portfolio/website/?PAGEN_1=2
+* https://itrack.ru/portfolio/vnedrenie-crm/?PAGEN_1=2
+* https://itrack.ru/portfolio/vnedrenie-crm/mobifitness/
+* https://itrack.ru/portfolio/website/miratorg/
+        
+        Необходимо при загрузке страницы заполнить массив с параметрами страницы:
+* Тип страницы (type) - index, filter, project, nextPage
+* Направление работы (direct) - website, crm
+* Параметры фильтра (filterParam) - строка между filter и apply
+* Проект (project) - код проекта из url
+
+
+        И при изменении URL без перезагрузки страницы массив должен быть обновлён.
+
+
+5. Напишите на JS простейший «ползунок» (https://i.stack.imgur.com/nYjiU.png). Входные данные min, max, current.
+6. Приведите пример реализации наследования.
