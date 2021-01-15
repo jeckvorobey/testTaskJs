@@ -1,6 +1,6 @@
 //1. Напишите рекурсивную функцию вычисления n факториала.
 fact = (n) => {
-  return ( n === 1 || n === 0) ? 1 : n * fact(n-1)
+  return (n === 1 || n === 0) ? 1 : n * fact(n - 1)
 };
 
 console.log(fact(6)) //720
@@ -62,7 +62,38 @@ console.log(fact(6)) //720
 //     });
 // };
 
+//5. Напишите на JS простейший «ползунок» (https://i.stack.imgur.com/nYjiU.png). Входные данные min, max, current.
+document.addEventListener('DOMContentLoaded', () => {
+  const range = document.querySelector('#range');
+  const rangeLine = document.querySelector('.range-line');
+  const number = document.querySelector('.number');
+
+  const arg = {
+    min: 0,
+    max: 100000,
+    current: 10000
+  }
+  setINPUT(arg);
+
+  function setINPUT(arg) {
+    range.setAttribute('min', arg.min);
+    range.setAttribute('max', arg.max);
+    range.setAttribute('volume', arg.current);
+  }
+
+  range.addEventListener('mousemove', e => {
+    rangeLine.style.width = e.target.value + "%";
+  })
+
+  range.addEventListener('input', e => {
+
+    number.textContent = e.target.value;
+  })
+});
+
+
 //6. Приведите пример реализации наследования.
+/*
 class Transport {
   constructor(options) {
     this.type = options.type;
@@ -108,6 +139,6 @@ ship.show() //Это Корабль
 ship.captain() //Капитана корабля зовут Петрович
 car.moves() //Это Автомобиль он умеет ехать
 ship.moves() //Это Корабль он умеет плавать
-
+*/
 
 
