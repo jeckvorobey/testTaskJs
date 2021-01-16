@@ -68,26 +68,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const rangeLine = document.querySelector('.range-line');
   const number = document.querySelector('.number');
 
+//Входные данные min, max, current.
   const arg = {
     min: 0,
     max: 100000,
     current: 10000
   }
-  setINPUT(arg);
+  setInput(arg);
 
-  function setINPUT(arg) {
+  function setInput(arg) {
     range.setAttribute('min', arg.min);
     range.setAttribute('max', arg.max);
     range.setAttribute('volume', arg.current);
+    number.textContent = arg.current;
+    rangeLine.style.width = persentWith(arg.current, arg.max) + '%';
   }
 
-  range.addEventListener('mousemove', e => {
-    rangeLine.style.width = e.target.value + "%";
-  })
+  function persentWith(value, max) {
+    return value * 100 / max;
+  }
 
   range.addEventListener('input', e => {
-
     number.textContent = e.target.value;
+    rangeLine.style.width = persentWith(e.target.value, arg.max) + "%";
   })
 });
 
