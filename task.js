@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //Входные данные min, max, current.
   const arg = {
     min: 0,
-    max: 100000,
+    max: 40000,
     current: 10000
   }
   setInput(arg);
@@ -79,18 +79,17 @@ document.addEventListener('DOMContentLoaded', () => {
   function setInput(arg) {
     range.setAttribute('min', arg.min);
     range.setAttribute('max', arg.max);
-    range.setAttribute('volume', arg.current);
+    range.setAttribute('value', arg.current);
     number.textContent = arg.current;
-    rangeLine.style.width = persentWith(arg.current, arg.max) + '%';
+    rangeLine.style.width = progress(arg.current, arg.max) + '%';
   }
-
-  function persentWith(value, max) {
+  function progress  (value, max)  {
     return value * 100 / max;
   }
 
   range.addEventListener('input', e => {
     number.textContent = e.target.value;
-    rangeLine.style.width = persentWith(e.target.value, arg.max) + "%";
+    rangeLine.style.width = progress(e.target.value, e.target.max) + "%";
   })
 });
 
