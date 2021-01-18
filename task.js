@@ -1,11 +1,11 @@
 //1. Напишите рекурсивную функцию вычисления n факториала.
-/*
+
 fact = (n) => {
   return (n === 1 || n === 0) ? 1 : n * fact(n - 1)
 };
 
 console.log(fact(6)) //720
-*/
+
 
 /*
 2. Чем различаются записи:
@@ -33,7 +33,7 @@ console.log(fact(6)) //720
         });
 });
 */
-/*
+
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.querySelector(".popup_open");
   btn.addEventListener('click', () => {
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-*/
+
 
 /*
 4. Имеются следующие URL
@@ -145,40 +145,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //5. Напишите на JS простейший «ползунок» (https://i.stack.imgur.com/nYjiU.png). Входные данные min, max, current.
 
-// document.addEventListener('DOMContentLoaded', () => {
-//   const range = document.querySelector('#range');
-//   const rangeLine = document.querySelector('.range-line');
-//   const number = document.querySelector('.number');
-//
-// //Входные данные min, max, current.
-//   const arg = {
-//     min: 0,
-//     max: 20000,
-//     current: 10000
-//   }
-//   setInput(arg);
-//
-//   function setInput(arg) {
-//     range.setAttribute('min', arg.min);
-//     range.setAttribute('max', arg.max);
-//     range.setAttribute('value', arg.current);
-//     number.textContent = arg.current;
-//     rangeLine.style.width = progress(arg.current, arg.max) + '%';
-//   }
-//
-//   function progress(value, max) {
-//     return value * 100 / max;
-//   }
-//
-//   range.addEventListener('input', e => {
-//     number.textContent = e.target.value;
-//     rangeLine.style.width = progress(e.target.value, e.target.max) + "%";
-//   })
-// });
+document.addEventListener('DOMContentLoaded', () => {
+  const range = document.querySelector('#range');
+  const rangeLine = document.querySelector('.range-line');
+  const number = document.querySelector('.number');
+
+//Входные данные min, max, current.
+  const arg = {
+    min: 0,
+    max: 20000,
+    current: 10000
+  }
+  setInput(arg);
+
+  function setInput(arg) {
+    range.setAttribute('min', arg.min);
+    range.setAttribute('max', arg.max);
+    range.setAttribute('value', arg.current);
+    number.textContent = arg.current;
+    rangeLine.style.width = progress(arg.current, arg.max) + '%';
+  }
+
+  function progress(value, max) {
+    return value * 100 / max;
+  }
+
+  range.addEventListener('input', e => {
+    number.textContent = e.target.value;
+    rangeLine.style.width = progress(e.target.value, e.target.max) + "%";
+  })
+});
 
 
 //6. Приведите пример реализации наследования.
-/*
+
 class Transport {
   constructor(options) {
     this.type = options.type;
@@ -224,6 +224,6 @@ ship.show() //Это Корабль
 ship.captain() //Капитана корабля зовут Петрович
 car.moves() //Это Автомобиль он умеет ехать
 ship.moves() //Это Корабль он умеет плавать
-*/
+
 
 
